@@ -1,0 +1,199 @@
+*{
+    margin: 0;border: 0;
+    box-sizing: border-box;
+}
+body{
+    /*overflow-x: hidden;*/
+    min-width: 1200px;
+}
+html,body{
+    height: 100%;
+}
+body.o-hidden{
+    overflow: hidden;
+}
+.home-banner{
+    position: relative;
+    z-index: 1;
+}
+#b04 ul li{
+    float: left;
+}
+#b04 .dots{
+    position: absolute;
+    bottom: 30px;
+    width: 300px;
+    text-align: center;
+    left: 50%;
+    margin-left: -135px;
+}
+#b04 li.dot{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    border:2px solid #fff;
+    margin-right: 30px;
+    font-size: 0;
+    border-radius: 50%;
+}
+#b04 li.dot.active{
+    background: #fff;
+}
+.fix-bg{
+    width: 100%;padding-top: 51.51%;
+    position: absolute;
+    top:0;left: 0;
+    z-index: -1;
+    perspective: 1000px;
+    background: rgba(0,0,0,.5);
+}
+.fix-bg div{
+    width: 100%;height: 100%;position: absolute;top:0;left: 0;
+
+    transform: translate3d(0,0,0);
+    /*transition: opacity 3s, transform 3s;*/
+    opacity: 0;
+}
+@keyframes fade-in
+{
+    0%   {opacity: 0;transform: translate3d(0,0,0);}
+    70%  {opacity: 1;}
+    100% {opacity: 0;    transform: translate3d(0,0,100px);  }
+}
+.fix-bg div.in{
+    /*transform: translate3d(0,0,50px);*/
+    /*opacity: 1;*/
+    animation:fade-in 4s;
+}
+.fix-bg div.bg01{
+    background: url(../images/fix-bg01.jpg);
+}
+
+.fix-bg div.bg02{
+    background: url(../images/fix-bg02.jpg);
+    -webkit-transform: translate3d(0,0,100px);
+    transform: translate3d(0,0,100px);
+}
+
+.fix-bg div.bg03{
+    background: url(../images/fix-bg03.jpg);
+    -webkit-transform: translate3d(0,0,100px);
+    transform: translate3d(0,0,100px);
+}
+
+.fix-bg div.bg04{
+    background: url(../images/fix-bg04.png);
+    -webkit-transform: translate3d(0,0,100px);
+    transform: translate3d(0,0,100px);
+}
+
+.s1{
+    position: fixed;width: 100%;height: 100%;
+    top:0;left: 0;
+    z-index: 3;
+}
+.s1 ._mask{
+    top:0;left: 0;
+
+    position: fixed;width: 100%;height: 100%;
+    z-index: 1;
+    background: #000;
+    opacity: 1;
+    transition: opacity 2s, transform 1s;
+    transition-delay: 1.5s;
+}
+.s1 .logoo{
+    filter:blur(5px);
+    transition: transform .5s,filter .5s,margin-top .5s,opacity .5s;
+    transition-delay: .5s;
+    background: url(../images/logoo.png);
+    width: 228px;height: 49px;
+    position: fixed;left: 50%;
+    top:50%;
+    margin-left: -114px;
+    margin-top: 0;
+    z-index: 2;
+    opacity: 0;
+}
+.s1 ._text1{
+    font-size: 30px;
+    width: 708px;
+    position: fixed;left: 50%;top:50%;
+    margin-left: -354px;text-align: justify;
+    transition: transform .5s,margin-top .5s,opacity .5s;
+    transition-delay: .6s;
+    opacity: 0;
+    z-index: 2;
+    color: #fff;
+    margin-top: 100px;
+}
+
+.s1 ._text2{
+    font-size: 22px;
+    width: 460px;
+    position: fixed;left: 50%;top:50%;
+    margin-left: -230px;text-align: center;
+    transition: transform .5s,margin-top .5s,opacity .5s;
+    transition-delay: .7s;
+    opacity: 0;
+    z-index: 2;
+    color: #fff;
+    margin-top: 150px;
+}
+.s1.active ._mask{
+    opacity: 0;
+}
+.s1.active .logoo{
+    opacity: 1;
+    filter:blur(0px);
+    margin-top: -25px;
+}
+
+.s1.active ._text1{
+    opacity: 1;
+    margin-top: 50px;
+}
+.s1.active ._text2{
+    opacity: 1;
+    margin-top: 100px;
+}
+.section01{
+    height: 356px;
+    background: url(../images/repeat-bg.png) repeat #fcf8ee;
+    text-align: center;
+}
+.section01>div{
+    width: 860px;display: flex;justify-content: space-between;margin: 0 auto 0 auto;
+    padding-top: 60px;
+}
+.section01>div img{
+    display: block;margin: 0 auto 25px auto;
+}
+.section02{
+    text-align: center;
+    background: #fff;
+}
+.section02 .list{
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    width: 1080px;
+    margin: 0 auto;
+}
+.section02 .list .item{
+    width: 360px;margin-bottom: 25px;
+}
+.section02 .list .item ._btn{
+    display: block;
+    margin: 0 auto;
+    text-align: right;
+    font-size: 12px;
+    border-radius: 10px;
+    width: 100px;
+    height: 20px;
+    line-height: 20px;
+    color: #fff;
+    background: url(../images/icon-add-cart.png) no-repeat 7px center #d1ab80;
+    padding-right: 8px;cursor: pointer;
+}
