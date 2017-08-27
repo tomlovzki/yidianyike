@@ -236,6 +236,7 @@
         var $footer = $(".footer");
         var $body = $("body");
         var $section01 = $(".section01");
+        var diff = (document.body.clientWidth>1500?300:0);
         setTimeout(function(){
             $("html,body").animate({scrollTop:clientHeight/2},1000);
             $footer.removeClass('show');
@@ -270,7 +271,7 @@
                     $nav.removeClass('hide');
                     $footer.removeClass('show');
                 }
-                if(scrollTop>$section01.get(0).offsetTop-356){
+                if(scrollTop>$section01.get(0).offsetTop-356-diff){
 //                if(scrollTop>document.body.clientWidth*0.3083+clientHeight-650){
                     $(".section01").addClass("active");
                 }
