@@ -122,7 +122,7 @@ body.o-hidden{
     position: fixed;left: 50%;top:50%;
     margin-left: -354px;text-align: justify;
     transition: transform .5s,margin-top .5s,opacity .5s;
-    transition-delay: .6s;
+    transition-delay: .7s;
     opacity: 0;
     z-index: 2;
     color: #fff;
@@ -135,7 +135,7 @@ body.o-hidden{
     position: fixed;left: 50%;top:50%;
     margin-left: -230px;text-align: center;
     transition: transform .5s,margin-top .5s,opacity .5s;
-    transition-delay: .7s;
+    transition-delay: .8s;
     opacity: 0;
     z-index: 2;
     color: #fff;
