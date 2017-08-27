@@ -176,6 +176,7 @@
     <div class="bg03"></div>
     <div class="bg04"></div>
 </div>
+<div id="scroll-top"></div>
 
 <footer>
     <div class="footer">
@@ -205,7 +206,8 @@
         function e() {
             $("#b04").css({
                 'min-height':    document.body.clientWidth*0.3083+"px"
-            })
+            });
+            $("#scroll-top").css({right:(document.body.clientWidth-1200)/2+"px"})
         }
 
         var t = null;
@@ -217,6 +219,9 @@
 
     var clientHeight = document.body.clientHeight;
     $(function(){
+        $("#scroll-top").click(function(){
+            $("html,body").animate({scrollTop:0},600);
+        });
         var unslider04 = $('#b04').unslider({
             dots: true,fluid:true,delay:3000,autoplay:true
         });
@@ -227,7 +232,7 @@
         var $footer = $(".footer");
         var $body = $("body");
         setTimeout(function(){
-            $body.animate({scrollTop:clientHeight/2},1000);
+            $("html,body").animate({scrollTop:clientHeight/2},1000);
             $footer.removeClass('show');
         },6000);
 
@@ -241,32 +246,46 @@
             $footer.addClass('show');
             $body.removeClass('o-hidden');
 
-            $body.bind('mousewheel', function(event, delta, deltaX, deltaY) {
-                if(delta>=1){
-                    $nav.removeClass('hide');
-                    $footer.removeClass('show');
-                }else{
-                    if(document.body.scrollTop>clientHeight&&!$nav.hasClass('hide')){
+            var s1Hide = 0;
+            var lastScrollTop = 0;
+            var func_scroll = function(){
+                var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+                var scrollHeight=document.documentElement.scrollHeight||document.body.scrollHeight;
+//                console.log(scrollTop,lastScrollTop);
+                if(scrollTop>=lastScrollTop){
+                    if(scrollTop>clientHeight&&!$nav.hasClass('hide')){
                         //滚动超过一屏高度时
-                        console.log("滚动超过一屏高度时");
+//                        console.log("滚动超过一屏高度时");
                         $nav.addClass('hide');
                     }
-                    if(document.body.scrollTop+document.body.clientHeight>=document.body.scrollHeight){
+                    if(scrollTop+clientHeight>=scrollHeight){
                         $footer.addClass('show');
                     }
+                }else{
+                    $nav.removeClass('hide');
+                    $footer.removeClass('show');
                 }
-            });
-            $body[0].onscroll = function(){
-                var top = (50-document.body.scrollTop/(clientHeight/2)*100)+"%";
-                var opacity = (1-3*document.body.scrollTop/(clientHeight/2)).toFixed(2);
+                setTimeout(function(){
+                    lastScrollTop = scrollTop;
+                },100);
+
+                if(s1Hide){return;}
+                var top = (50-scrollTop/(clientHeight/2)*100)+"%";
+                var opacity = (1-3*scrollTop/(clientHeight/2)).toFixed(2);
                 if(opacity<0){
-                    $('body')[0].onscroll = function(){};
+//                    $('body')[0].onscroll = function(){};
                     $('.s1').hide();
+                    s1Hide = 1
                 }
                 opacity = opacity<0?0:opacity;
                 $logoo.css({top:top,opacity:opacity});
                 $_text1.css({top:top,opacity:opacity});
                 $_text2.css({top:top,opacity:opacity});
+            };
+            var t = null;
+            window.onscroll = function(){
+                func_scroll();
+//                clearTimeout(t),setTimeout(func_scroll,300);
             }
         },3000);
         setTimeout(function(){
