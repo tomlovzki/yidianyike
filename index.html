@@ -238,7 +238,7 @@
         setTimeout(function(){
             $("html,body").animate({scrollTop:clientHeight/2},1000);
             $footer.removeClass('show');
-        },6000);
+        },10000);
 
         $("#add-height").css({'height':clientHeight-$(".header").get(0).offsetHeight+"px"});
         $(".fix-bg").css({'min-height':clientHeight});
@@ -269,7 +269,7 @@
                     $nav.removeClass('hide');
                     $footer.removeClass('show');
                 }
-                if(scrollTop>document.body.clientWidth*0.3083+clientHeight-200){
+                if(scrollTop>document.body.clientWidth*0.3083+clientHeight-300){
                     $(".section01").addClass("active");
                 }
                 setTimeout(function(){
