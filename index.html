@@ -99,28 +99,32 @@
 </div>
 <div class="section01">
     <div style="">
-        <div>
-            <img src="images/section-img01.png" width="191" height="191">
+        <div class="_item">
+            <div class="circle01"></div>
+            <div class="_animate01"></div>
             <a>
                 <span style="color: #885f3f" class="ft18">生日蛋糕</span><br/>
                 <span style="color: #bfaea0;" class="ft12">Birthday cake</span>
+            </a>
+        </div>
+        <div class="_item">
+            <div class="circle01"></div>
+            <div class="_animate02"></div>
+            <a>
+                <span style="color: #885f3f" class="ft18">生日仪式</span><br/>
+                <span style="color: #bfaea0;" class="ft12">Birthday ceremony</span>
+            </a>
+        </div>
+        <div class="_item">
+            <div class="circle01"></div>
+            <div class="_animate03"></div>
+            <a>
+                <span style="color: #885f3f" class="ft18">生日周边</span><br/>
+                <span style="color: #bfaea0;" class="ft12">Birthday Surrounding</span>
             </a>
         </div>
 
-        <div>
-            <img src="images/section-img01.png" width="191" height="191">
-            <a>
-                <span style="color: #885f3f" class="ft18">生日蛋糕</span><br/>
-                <span style="color: #bfaea0;" class="ft12">Birthday cake</span>
-            </a>
-        </div>
-        <div>
-            <img src="images/section-img01.png" width="191" height="191">
-            <a>
-                <span style="color: #885f3f" class="ft18">生日蛋糕</span><br/>
-                <span style="color: #bfaea0;" class="ft12">Birthday cake</span>
-            </a>
-        </div>
+
     </div>
 </div>
 <div class="section02">
@@ -264,6 +268,9 @@
                 }else{
                     $nav.removeClass('hide');
                     $footer.removeClass('show');
+                }
+                if(scrollTop>document.body.clientWidth*0.3083+clientHeight){
+                    $(".section01").addClass("active");
                 }
                 setTimeout(function(){
                     lastScrollTop = scrollTop;

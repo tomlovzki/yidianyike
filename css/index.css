@@ -209,3 +209,90 @@ body{
     bottom: 100px;
     cursor: pointer;z-index: 1;
 }
+
+.section01 ._item{
+    position: relative;width: 191px;height: 191px;
+}
+.section01 ._item a{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -70px;
+}
+.section01 a{
+    display: none;
+}
+.section01.active a{
+    display: block;
+}
+.circle01{
+    background: url(../images/circle.png);
+    width: 191px;height: 191px;
+    position: absolute;
+    transition: opacity 1s, transform 1s;
+    transform: translateY(10px);
+    opacity: 0;
+}
+.section01.active .circle01,.section01.active .circle02,.section01.active .circle03{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.circle02{
+    background: url(../images/circle.png);
+    width: 191px;height: 191px;
+    position: absolute;
+    transition: opacity 1s, transform 1s;
+    transition-delay: .2s;
+    transform: translateY(10px);
+    opacity: 0;
+}
+.circle03{
+    background: url(../images/circle.png);
+    width: 191px;height: 191px;
+    position: absolute;
+    transition: opacity 1s, transform 1s;
+    transition-delay: .4s;
+    transform: translateY(10px);
+    opacity: 0;
+}
+
+._animate01{
+    background: url(../images/animate-img01.png);
+    width: 128px;height: 132px;
+    position: absolute;
+    transition: opacity 1s, transform 1s;
+    left: 31px;
+    top: 29px;
+    transform: translateY(15px);
+    opacity: 0;
+}
+
+._animate02{
+    background: url(../images/animate-img02.png);
+    width: 113px;height: 134px;
+    position: absolute;
+    transition: opacity 1s, transform 1s;
+    left: 39px;
+    top: 28px;
+    transition-delay: .2s;
+    transform: translateY(15px);
+    opacity: 0;
+}
+
+._animate03{
+    background: url(../images/animate-img03.png);
+    width: 113px;height: 141px;
+    position: absolute;
+    transition: opacity 1s, transform 1s;
+    left: 39px;
+    top: 25px;
+    transition-delay: .4s;
+    transform: translateY(15px);
+    opacity: 0;
+}
+
+.section01.active ._animate01,.section01.active ._animate02,.section01.active ._animate03{
+    transform: translateY(0);
+    opacity: 1;
+}
