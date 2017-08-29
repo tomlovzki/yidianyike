@@ -280,6 +280,9 @@ li{
     cursor: pointer;
 	font-size:14px;
 }
+.nav .nav_list .item h5{
+    font-weight: normal;
+}
 .nav .nav_list .item.cur{
     color: #f55a19;
 	font-size:14px;
