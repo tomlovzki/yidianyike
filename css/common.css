@@ -115,7 +115,7 @@ li{
     background: rgba(76,76,76,.5);
     color: #fff;
     position: fixed;top:0;left: 0;width: 100%;
-    z-index: 2;
+    z-index: 3;
 }
 .header .bar .layout{
 }
@@ -123,37 +123,44 @@ li{
     display: inline-block;background: url(../images/icon-location.png);
     width: 13px;height: 17px;
     margin-right: 7px;
-    /*position: relative;*/
-    /*top:3px;*/
+    position: relative;
+    top:-7px;
 }
 .icon-down{
     display: inline-block;background: url(../images/icon-down.png);
     width: 5px;height: 4px;
     margin-right: 13px;
-    /*position: relative;*/
-    /*top:-3px;left: 2px;*/
+    position: relative;
+    top: -13px;
+
 }
 .header .bar .location{
     height: 100%;
     padding: 0 4px;float: left;
     cursor: pointer;
-    display: flex;
+    
+    
     align-items: center;
+    -webkit-align-items: center;
 }
 .header .bar .location ._line{
     background:rgba(255,255,255,.52);display: inline-block;width: 1px;height: 16px;
     /*position: relative;top:4px;*/
     /*left: 13px;*/
-    margin-right: 18px;
+    margin-right: 18px;position: relative;
+    top: -7px;
 }
 .icon-user{
     display: inline-block;background: url(../images/icon-user.png);
     width: 16px;height: 18px;
     margin-right: 23px;
+    position: relative;
+    top: -7px;
 }
 .icon-cart{
     display: inline-block;background: url(../images/icon-cart.png);
     width: 18px;height: 18px;position: relative;
+    top: -7px;
 }
 .header .bar .location .icon_location{
     margin-right: 1px;
@@ -188,7 +195,11 @@ li{
 }
 .header .bar .r_block{
     float: right;color: #fff;height: 100%;
-    display: flex;align-items: center;
+    align-items: center;
+    -webkit-align-items: center;
+
+    
+
 }
 .header .bar span{
 }
@@ -201,11 +212,13 @@ li{
 .header .bar .split_line{
     height: 14px;margin: 0 16px;border: none;
     background: rgba(255,255,255,.52);
+    position: relative;top:2px;
 }
 .icon-help{
     background: url(../images/icon-help.png);
     width: 14px;height: 14px;margin-right: 5px;
     display: inline-block;
+    position: relative;top:2px;
 }
 
 .icon-menu{
@@ -218,7 +231,7 @@ li{
     transition: all 0.5s ease-in-out;
     position: fixed;
     top:32px;
-    z-index: 3;
+    z-index: 2;
     /*background: rgba(76,76,76,.5);*/
     width: 100%;
 }
@@ -226,7 +239,7 @@ li{
     top: -150px;
 }
 .nav .layout{
-    /*display: flex;align-items: center;*/
+
 }
 .logo{
     background: url(../images/logo.png);
@@ -240,7 +253,9 @@ li{
     float: left;
     margin-top: 30px;
     margin-left: 90px;
-    display: flex;
+    
+    
+    -webkit-align-items: center;
     align-items: center;
 }
 .nav .nav_list .item{

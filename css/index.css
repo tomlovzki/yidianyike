@@ -34,11 +34,11 @@ body{
 }
 #b04 li.dot{
     display: inline-block;
-    width: 15px;
-    height: 15px;
+    width: 10px;
+    height: 10px;
     cursor: pointer;
-    border:2px solid #fff;
-    margin-right: 30px;
+    border:1px solid #fff;
+    margin-right: 15px;
     font-size: 0;
     border-radius: 50%;
 }
@@ -51,7 +51,8 @@ body{
     top:0;left: 0;
     z-index: -1;
     perspective: 1000px;
-    background: rgba(0,0,0,.5);
+    background: rgb(0,0,0);
+    /*opacity: .5;*/
     overflow: hidden;
 }
 .fix-bg div{
@@ -71,6 +72,8 @@ body{
     /*transform: translate3d(0,0,50px);*/
     /*opacity: 1;*/
     animation:fade-in 5s;
+    -webkit-animation:fade-in 5s;
+    opacity: 1;
 }
 .fix-bg div.bg01{
     background: url(../images/fix-bg01.jpg);
@@ -169,8 +172,9 @@ body{
     text-align: center;
 }
 .section01>div{
-    width: 860px;display: flex;justify-content: space-between;margin: 0 auto 0 auto;
+    width: 860px;justify-content: space-between;margin: 0 auto 0 auto;
     padding-top: 60px;
+    
 }
 .section01>div img{
     display: block;margin: 0 auto 25px auto;
@@ -180,14 +184,17 @@ body{
     background: #fff;
 }
 .section02 .list{
-    display: flex;
+    
+    
     justify-content: left;
     flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
     width: 1080px;
     margin: 0 auto;
 }
 .section02 .list .item{
     width: 360px;margin-bottom: 25px;
+    float: left;
 }
 .section02 .list .item img{
     margin: 0 auto;
@@ -199,15 +206,36 @@ body{
     text-align: right;
     font-size: 12px;
     border-radius: 10px;
-    width: 100px;
+    width: 78px;
     height: 20px;
     line-height: 20px;
     color: #fff;
     padding-right: 8px;cursor: pointer;
     background-color: #d1ab80;
+    background-size: 0;
+    transition: width .5s;
+    position: relative;
 }
 .section02 .list .item ._btn:hover{
-    background: url(../images/icon-add-cart.png) no-repeat 7px center #d1ab80;
+    width: 100px;
+    /*background: url(../images/icon-add-cart.png) no-repeat 7px center #d1ab80;*/
+    /*background-size: 18px 16px;*/
+}
+.section02 .list .item ._btn .icon-add-cart{
+    display: inline-block;position: absolute;
+    background: url(../images/icon-add-cart.png) no-repeat;
+    background-size: 100%;
+    left: 8px;
+    top: 1px;
+    transition: transform .5s;
+    transition-timing-function: ease-in-out;
+    width: 18px; height:16px;
+    transform:scale(0);
+
+}
+.section02 .list .item ._btn:hover .icon-add-cart{
+    width: 18px; height:16px;
+    transform:scale(1);
 }
 #scroll-top{
     background: url(../images/scroll-top.png);
@@ -219,6 +247,13 @@ body{
 
 .section01 ._item{
     position: relative;width: 191px;height: 191px;
+    display: inline-block;
+}
+.section01 ._item:nth-child(1){
+    float: left;
+}
+.section01 ._item:nth-child(3){
+    float: right;
 }
 .section01 ._item a._link{
     display: block;width: 100%;height: 100%;
@@ -247,7 +282,16 @@ body{
     transform: translateY(0);
     opacity: 1;
 }
-
+._animate01:hover,._animate02:hover,._animate03:hover{
+    animation: ty10 1s;
+}
+@keyframes ty10 {
+    0%{transform: translateY(10px);
+        opacity: 0;}
+    100%{
+        transform: translateY(0);
+        opacity: 1;}
+}
 .circle02{
     background: url(../images/circle.png);
     width: 191px;height: 191px;
@@ -308,10 +352,11 @@ body{
 }
 .slider-menu{
     width: 60px;
-    height: 247px;
+    height: 240px;
     border-radius: 5px;
     padding: 10px 5px;
-    background: rgba(0,0,0,.5);
+    background: rgb(0,0,0);
+    opacity: .5;
     font-size: 12px;
     color: #fff;
     position: fixed;
@@ -325,7 +370,7 @@ body{
     display: block;
     position: relative;
     margin-bottom: 10px;
-    border-bottom: 1px dashed #fff;
+    border-bottom: 1px dotted #fff;
 }
 .slider-menu .item span{
     position: absolute;
@@ -358,4 +403,24 @@ body{
 }
 .slider-menu .item:nth-child(4){
     background: url(../images/slider-icon04.png) no-repeat center top;
+}
+.qr-a:hover .qr{
+    opacity: 1;
+}
+.qr{
+    background: url(../images/qr-bg.png) no-repeat;
+    width: 183px;
+    height: 192px;
+    position: absolute;
+    top: -172px;
+    left: -82px;
+    transition: opacity .5s;
+    opacity: 0;
+}
+.qr img{
+    width: 144px;
+    height: 144px;
+    display: block;
+    margin: 20px auto;
+    float: none;
 }
