@@ -324,6 +324,9 @@ li{
 .nav ._link .split_line{
     margin: 0 10px;
 }
+.nav_link:hover{
+    color: #f55a19;
+}
 .footer.show{
     bottom:0;
 }
@@ -335,6 +338,7 @@ li{
     text-align: center;
     position: fixed;bottom: -75px;width: 100%;
     left: 0;z-index: 2;
+    border-top: 1px solid #f0f0f0;
 }
 .footer img{
     height: auto;float: left;
