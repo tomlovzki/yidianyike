@@ -405,7 +405,7 @@ body{
     background: url(../images/slider-icon04.png) no-repeat center top;
 }
 .qr-a:hover .qr{
-    opacity: 1;
+    /*opacity: 1;*/
 }
 .qr{
     background: url(../images/qr-bg.png) no-repeat;
@@ -413,9 +413,10 @@ body{
     height: 192px;
     position: absolute;
     top: -172px;
-    left: -82px;
-    transition: opacity .5s;
-    opacity: 0;
+    left: 446px;
+    display: none;
+    /*transition: opacity .5s;*/
+    /*opacity: 0;*/
 }
 .qr img{
     width: 144px;

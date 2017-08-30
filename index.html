@@ -225,15 +225,16 @@
 
 <footer>
     <div class="footer">
-        <div class="layout">
+        <div class="layout" style="position: relative">
             <div class="logo-small"></div>
             <p class="copyright">Copyright© 深圳壹点壹客食品有限公司版权所有 ICP备案证书号:粤ICP备11021841号</p>
             <a class="f_l"><img src="images/icon-weibo.png" width="22" height="17" style="margin-right: 10px;"></a>
             <a class="f_l qr-a" style="position: relative"><img src="images/icon-wx.png" width="21" height="17" style="margin-top: 29px;position: relative">
+
+            </a>
             <div class="qr">
                 <img src="images/qr-sz.jpg">
             </div>
-            </a>
             <div class="_link">
                 <a style="border: 0;">订购指南</a>
                 <a>配送范围</a>
@@ -286,6 +287,13 @@
             $("html,body").animate({scrollTop:clientHeight/2},1000);
             $footer.removeClass('show');
         },10000);
+
+        $(".qr-a").on('mouseover',function(){
+            $(".qr").fadeIn();
+        });
+        $(".qr-a").on('mouseout',function(){
+            $(".qr").fadeOut();
+        });
 
         $("#add-height").css({'height':clientHeight-$(".header").get(0).offsetHeight+"px"});
         $(".fix-bg").css({'min-height':clientHeight});
