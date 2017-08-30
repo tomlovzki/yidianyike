@@ -194,6 +194,7 @@ body{
     width: 360px;margin-bottom: 25px;
     float: left;
     perspective: 1000px;
+    height: 300px;
 }
 .section02 .list .item img{
     margin: 0 auto;
