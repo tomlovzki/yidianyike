@@ -134,7 +134,9 @@ body{
     z-index: 2;
     color: #fff;
     margin-top: 100px;
-    text-justify:inter-ideograph
+    text-justify:inter-ideograph;
+    background: url(../images/_text1.png) no-repeat top center;
+    height: 76px;
 }
 
 .s1 ._text2{
@@ -148,6 +150,8 @@ body{
     z-index: 2;
     color: #fff;
     margin-top: 150px;
+    background: url(../images/_text2.png) no-repeat center;
+    height: 30px;
 }
 .s1.active ._mask{
     opacity: 0;
@@ -155,16 +159,16 @@ body{
 .s1.active .logoo{
     opacity: 1;
     filter:blur(0px);
-    margin-top: -25px;
+    margin-top: -75px;
 }
 
 .s1.active ._text1{
     opacity: 1;
-    margin-top: 50px;
+    margin-top: 10px;
 }
 .s1.active ._text2{
     opacity: 1;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 .section01{
     height: 356px;
@@ -429,4 +433,29 @@ body{
     display: block;
     margin: 20px auto;
     float: none;
+}
+#add-height{
+    position: relative;
+}
+.icon-scroll{
+    background: url(../images/icon-scroll.png);
+    width: 22px;
+    height: 103px;
+    left: 50%;
+    bottom:0;
+    margin-left: -11px;
+    position: absolute;
+}
+.icon-scroll-tip{
+    background: url(../images/icon-jump.png) no-repeat;
+    display: block;width: 17px;height: 29px;margin: 0 auto;
+    animation: jump 1s;
+    animation-iteration-count:infinite;
+    position: relative;top:-20px;
+    left: -3px;
+}
+@keyframes jump {
+    0%{transform: translate(0,0);}
+    50%{transform: translate(0,20px)}
+    100%{transform: translate(0,0)}
 }
